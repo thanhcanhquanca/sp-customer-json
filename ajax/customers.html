@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý khách hàng</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .search-container, .button-container {
+      margin: 10px 0;
+    }
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+    }
+    button {
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1>Danh sách khách hàng</h1>
+
+<!-- Ô tìm kiếm -->
+<div class="search-container">
+  <input type="text" id="searchName" placeholder="Tìm theo tên">
+  <button onclick="searchCustomers()">Tìm kiếm</button>
+  <button onclick="showAllCustomer()">Tải lại tất cả</button>
+</div>
+
+<!-- Nút thêm khách hàng -->
+<div class="button-container">
+  <button onclick="window.location.href='create-customer.html'">Thêm khách hàng</button>
+</div>
+
+
+<table id="customerTable">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Tên</th>
+    <th>Họ</th>
+    <th>Email</th>
+    <th>Thành phố</th>
+    <th>Hành động</th>
+  </tr>
+  </thead>
+  <tbody id="customerList"></tbody>
+</table>
+
+<script src="customer.js"></script>
+</body>
+</html>
